@@ -1,0 +1,75 @@
+html {
+  overflow: hidden;
+}
+.dock {
+  position: absolute;
+  text-align: center;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  z-index: 1;
+}
+.dock-top, .dock-bottom{
+  min-width: 1000px;
+}
+.dock-top{
+  top: 10px;
+  left: 0px;
+  right: 0px;
+}
+.dock-right{
+  right: 10px;
+  top: 0;
+  bottom: 0;
+}
+.dock-bottom{
+  bottom: 10px;
+  left: 0px;
+  right: 0px;
+}
+.dock-left{
+  left: 10px;
+  top: 0;
+  bottom: 0;
+}
+.dock-top li, .dock-bottom li{
+  display: inline-block;
+}
+.dock div.genie-thumb{
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+.dock-top li, .dock-bottom li{
+  margin: 20px 50px;
+}
+.dock-left li, .dock-right li{
+  margin: 100px 20px;
+}
+.dock div.genie-thumb.genie-thumb {
+  -moz-transition: background-position 800ms ease-in-out;
+  -webkit-transition: background-position 800ms ease-in-out;
+  -o-transition: background-position 800ms ease-in-out;
+  -ms-transition: background-position 800ms ease-in-out;
+  transition: background-position 800ms ease-in-out;
+}
+#genie-target-wrapper{
+  position: absolute;
+  text-align: center;
+  top: 20%;
+  cursor: pointer;
+  width: 100%;
+}
+#genie-target{
+  display: inline-block;
+  border: 1px solid black;
+  width: 800px;
+  height: 600px;
+}
+#jet-photos-ref{
+  position: absolute;
+  z-index: 99999;
+}
