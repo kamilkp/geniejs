@@ -32,7 +32,7 @@
 			};
 		};
 
-	var GenieInit = function(container, directions, quantum, callback){
+	function GenieInit(container, directions, quantum, callback){
 		this.animationDirection = null;
 		this.possibleDirections = directions;
 		this.step_quantum = typeof quantum  === "number" ? Math.abs(Math.ceil(quantum)) : 3;
@@ -40,7 +40,9 @@
 		this.fixedContainer = document.body.appendChild(document.createElement('div'));
 		this.fixedContainer.className = 'genie';
 		this.callback = callback;
-	};
+	}
+
+	var timeoutTime = 20;
 	GenieInit.prototype = {
 		constructor: GenieInit,
 		collapseTransitionEvent: function(event) {
@@ -217,7 +219,7 @@
 						}
 						prefixedEvent(steps[0], 'TransitionEnd', delegate.call(that, that.collapseTransitionEvent), true);
 						fixed.className += ' collapse';
-					}, 10);
+					}, timeoutTime);
 					break;
 				case 'bottom':
 					fixed.style.width = source_dim.w + 'px';
@@ -256,7 +258,7 @@
 						}
 						prefixedEvent(steps[il-1], 'TransitionEnd', delegate.call(that, that.collapseTransitionEvent), true);
 						fixed.className += ' collapse';
-					}, 10);
+					}, timeoutTime);
 					break;
 				case 'right':
 					fixed.style.width = source_dim.w + 'px';
@@ -294,7 +296,7 @@
 						}
 						prefixedEvent(steps[il-1], 'TransitionEnd', delegate.call(that, that.collapseTransitionEvent), true);
 						fixed.className += ' collapse';
-					}, 10);
+					}, timeoutTime);
 					break;
 				case 'left':
 					var off = Math.ceil((source_dim.l - target_dim.r) / step_quantum);
@@ -333,7 +335,7 @@
 						prefixedEvent(steps[0], 'TransitionEnd', delegate.call(that, that.collapseTransitionEvent), true);
 						source.style.backgroundPosition = '9999px 0px';
 						fixed.className += ' collapse';
-					}, 10);
+					}, timeoutTime);
 					break;
 			}
 		},
@@ -426,7 +428,7 @@
 						}
 						source.style.backgroundPosition = '0px -'+ Math.floor((diffT / target_dim.h) * 100 ) +'px';
 						fixed.className += ' expand';
-					}, 0);
+					}, timeoutTime);
 					break;
 				case 'top':
 					var diffB = target_dim.b - source_dim.b,
@@ -472,7 +474,7 @@
 						}
 						source.style.backgroundPosition = '0px '+ Math.floor((diffB / target_dim.h) * 100 ) +'px';
 						fixed.className += ' expand';
-					}, 0);
+					}, timeoutTime);
 					break;
 				case 'right':
 					var diffL = source_dim.l - target_dim.l,
@@ -516,7 +518,7 @@
 						}
 						source.style.backgroundPosition = '-'+ Math.floor((diffL / target_dim.h) * 100 ) +'px 0px';
 						fixed.className += ' expand';
-					}, 0);
+					}, timeoutTime);
 					break;
 				case 'left':
 					var diffR = target_dim.r - source_dim.r,
@@ -562,7 +564,7 @@
 						}
 						source.style.backgroundPosition = Math.floor((diffR / target_dim.h) * 100 ) +'px 0px';
 						fixed.className += ' expand';
-					}, 0);
+					}, timeoutTime);
 					break;
 			}
 		}
