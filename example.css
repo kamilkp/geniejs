@@ -1,0 +1,99 @@
+html {
+  overflow: hidden;
+}
+.dock {
+  position: absolute;
+  text-align: center;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  z-index: 1;
+}
+.dock-top, .dock-bottom{
+  min-width: 1000px;
+}
+.dock-top{
+  top: 100px;
+  left: 0px;
+  right: 0px;
+}
+.dock-right{
+  right: 10px;
+  top: 110px;
+  bottom: 0;
+  z-index: 2;
+}
+.dock-bottom{
+  bottom: 10px;
+  left: 0px;
+  right: 0px;
+}
+.dock-left{
+  left: 10px;
+  top: 110px;
+  bottom: 0;
+  z-index: 2;
+}
+.dock-top li, .dock-bottom li{
+  display: inline-block;
+}
+.dock div.genie-thumb{
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+}
+.dock li{
+  background: white;
+}
+.dock-top li, .dock-bottom li{
+  margin: 20px 50px;
+}
+.dock-left li, .dock-right li{
+  margin: 100px 20px;
+}
+.dock div.genie-thumb.genie-thumb {
+  -moz-transition: background-position 800ms ease-in-out;
+  -webkit-transition: background-position 800ms ease-in-out;
+  -o-transition: background-position 800ms ease-in-out;
+  -ms-transition: background-position 800ms ease-in-out;
+  transition: background-position 800ms ease-in-out;
+}
+#genie-target-wrapper{
+  position: absolute;
+  text-align: center;
+  top: 240px;
+  cursor: pointer;
+  width: 100%;
+}
+#genie-target{
+  display: inline-block;
+  border: 1px solid black;
+  width: 640px;
+  height: 480px;
+  background-color: white;
+}
+#jet-photos-ref{
+  position: absolute;
+  z-index: 99999;
+  bottom: 5px;
+}
+#jet-photos-ref a{
+  color: hsl(0, 0%, 70%);
+}
+html{
+  background: rgba(52, 73, 94,1.0);
+}
+header{
+  text-align: center;
+  font-family: 'Helvetica' 'Verdana' 'sans-serif';
+  color: hsl(0, 100%, 100%);
+  font-size: 17px;
+  letter-spacing: 1px;
+  background: linear-gradient(rgba(52, 73, 94,1.0), hsl(210, 43%, 67%));
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
